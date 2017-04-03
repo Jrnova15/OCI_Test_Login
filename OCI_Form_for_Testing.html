@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta NAME="GENERATOR" Content="Microsoft Developer Studio">
+<meta HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Quick Login Page</title>
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+   
+   
+}
+	
+
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+   
+   
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   
+  
+}
+input[type=reset] {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   
+  
+}
+
+form{
+    text-align:left;
+	}
+
+fieldset{
+	width:275px;
+	margin:auto;
+	}
+	
+.center {
+	margin:auto;
+    margin-top: 20px;
+  
+    }
+
+
+</style>
+
+
+</head>
+<body>
+<div class="center">
+<form id="myForm" action=" " target="_blank" method="post">
+<fieldset>
+<legend>Sign In</legend>
+<table>
+<tr><td>Select URL:</td>
+<td>
+<select id="url" required>
+ <option value="" selected></option>
+ <option value="https://accounts.google.com/signin/challenge/sl/password">URL1</option> <!--Both Option tags will take to the Google sign in page.  Add your Test Login Page to Login-->
+ <option value="https://accounts.google.com/signin/challenge/sl/password">URL2</option>  
+</select></td></tr>
+
+
+<tr><td>
+Username: </td><td><input type="text" name="Email" value="" placeholder="Enter Username" required> <!--Add your own name tag -->
+</td></tr>
+
+<tr><td>
+Password: </td><td><input type="password" name="Passwd" value="" placeholder="Enter Password" required> <!--Add your own name tag -->
+</td></tr>
+
+
+<tr><td><input type="reset" value="Reset"></td>
+<td><input type="Submit" onClick="openUrl()" name="submit" value="Submit">
+</td></tr>
+
+</table>
+</fieldset>
+</form>
+</div>
+<script>
+function openUrl(){
+   var select = document.getElementById("url");
+   var url = select.options[select.selectedIndex].value;
+   document.getElementById('myForm').action = url;
+}
+</script>
+</body>
+</html> 
